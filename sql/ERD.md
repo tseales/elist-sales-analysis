@@ -1,4 +1,4 @@
-![elist_erd](https://github.com/user-attachments/assets/0cd9486a-f14d-4714-ab32-f66deded1b36)
+![elist-erd](https://github.com/user-attachments/assets/d07f2935-49c1-48e9-8e5d-97fe551e0f13)
 
 ```
 +-------------------------------------------------------------------+
