@@ -6,11 +6,11 @@
 -- Round averages to two decimal places
 
 SELECT
-  EXTRACT(YEAR FROM orders.purchase_ts) AS Year,
-  EXTRACT(QUARTER FROM orders.purchase_ts) AS Quarter,
-  COUNT(DISTINCT orders.id) AS Order_Counts,
-  ROUND(SUM(orders.usd_price),2) AS Sales,
-  ROUND(AVG(orders.usd_price),2) AS AOV
+  EXTRACT(YEAR FROM orders.purchase_ts) AS Year
+  , EXTRACT(QUARTER FROM orders.purchase_ts) AS Quarter
+  , COUNT(DISTINCT orders.id) AS Order_Counts
+  , ROUND(SUM(orders.usd_price),2) AS Sales
+  , ROUND(AVG(orders.usd_price),2) AS AOV
 FROM
   core.orders JOIN core.customers ON orders.customer_id = customers.id JOIN core.geo_lookup geo ON customers.country_code = geo.country_code
 WHERE
@@ -48,11 +48,11 @@ ORDER BY 2 DESC;
 -- Filter results for website purchases made in 2022 OR any mobile purchases
 
 SELECT
-  geo.region AS Region,
+  geo.region AS Region
   -- creates calculated column for avg. shipping days for web platform 
-  ROUND(AVG(CASE WHEN orders.purchase_platform = 'website' THEN DATE_DIFF(status.delivery_ts, status.purchase_ts, day) END),2) AS Web2020_Shipping_Days,
+  , ROUND(AVG(CASE WHEN orders.purchase_platform = 'website' THEN DATE_DIFF(status.delivery_ts, status.purchase_ts, day) END),2) AS Web2020_Shipping_Days
   -- creates calculated column for avg. shipping days for mobile platform
-  ROUND(AVG(CASE WHEN orders.purchase_platform = 'mobile app' THEN DATE_DIFF(status.delivery_ts, status.purchase_ts, day) END),2) AS Mobile_Shipping_Days
+  , ROUND(AVG(CASE WHEN orders.purchase_platform = 'mobile app' THEN DATE_DIFF(status.delivery_ts, status.purchase_ts, day) END),2) AS Mobile_Shipping_Days
 FROM
   core.orders LEFT JOIN core.customers ON orders.customer_id = customers.id LEFT JOIN core.order_status status ON orders.id = status.order_id LEFT JOIN core.geo_lookup geo ON customers.country_code = geo.country_code
 WHERE
@@ -70,10 +70,10 @@ GROUP BY 1;
 -- GROUP BY product, ORDER BY refund rate descending
 
 SELECT
-  CASE WHEN orders.product_name = '27in"" 4k gaming monitor' THEN '27in 4K gaming monitor' ELSE orders.product_name END AS Product,
+  CASE WHEN orders.product_name = '27in"" 4k gaming monitor' THEN '27in 4K gaming monitor' ELSE orders.product_name END AS Product
   -- takes avg. of refund-timestamp for calculating rate
-  ROUND(AVG(CASE WHEN status.refund_ts IS NOT NULL THEN 1 ELSE 0 END),3) AS Refund_Rate,
-  COUNT(status.refund_ts) AS Refunds
+  , ROUND(AVG(CASE WHEN status.refund_ts IS NOT NULL THEN 1 ELSE 0 END),3) AS Refund_Rate
+  , COUNT(status.refund_ts) AS Refunds
 FROM
   core.orders JOIN core.order_status status ON orders.id = status.order_id
 GROUP BY 1
@@ -92,20 +92,20 @@ ORDER BY 2 DESC;
 -- CTE for top-purchased products by region
 WITH regional_ranks AS(
   SELECT
-    geo.region AS region,
+    geo.region AS region
     -- cleaning product name for proper grouping
-    CASE WHEN orders.product_name = '27in"" 4k gaming monitor' THEN '27in 4K gaming monitor' ELSE orders.product_name END AS product,
-    COUNT(DISTINCT orders.id) AS order_count,
+    , CASE WHEN orders.product_name = '27in"" 4k gaming monitor' THEN '27in 4K gaming monitor' ELSE orders.product_name END AS product
+    , COUNT(DISTINCT orders.id) AS order_count
     --ranks products based on order count & groups/partitions by region
-    DENSE_RANK() OVER(PARTITION BY geo.region ORDER BY COUNT(DISTINCT orders.id) DESC) AS ranking
+    , DENSE_RANK() OVER(PARTITION BY geo.region ORDER BY COUNT(DISTINCT orders.id) DESC) AS ranking
   FROM
     core.orders JOIN core.customers ON orders.customer_id = customers.id JOIN core.geo_lookup geo ON customers.country_code = geo.country_code
   GROUP BY 1, 2
 )
 SELECT
-  region AS Region, 
-  product AS Product,
-  order_count
+  region AS Region 
+  , product AS Product
+  , order_count
 FROM
   regional_ranks
 WHERE 
@@ -123,9 +123,9 @@ WHERE
 
 SELECT 
   -- helper column for explicit loyalty vs. non-loyalty status
-  CASE WHEN customers.loyalty_program = 1 THEN 'Loyalty' ELSE 'Non-Loyalty' END AS Loyalty_Status,
-  ROUND(AVG(DATE_DIFF(orders.purchase_ts, customers.created_on, day)),2) AS Days_to_Purchase,
-  ROUND(AVG(DATE_DIFF(orders.purchase_ts, customers.created_on, month)),2) AS Months_to_Purchase
+  CASE WHEN customers.loyalty_program = 1 THEN 'Loyalty' ELSE 'Non-Loyalty' END AS Loyalty_Status
+  , ROUND(AVG(DATE_DIFF(orders.purchase_ts, customers.created_on, day)),2) AS Days_to_Purchase
+  , ROUND(AVG(DATE_DIFF(orders.purchase_ts, customers.created_on, month)),2) AS Months_to_Purchase
 FROM
   core.customers JOIN core.orders ON customers.id = orders.customer_id
 GROUP BY 1;
