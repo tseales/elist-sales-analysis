@@ -3,7 +3,13 @@
 ## About Our Company & Data
 Founded in 2018, Elist is an e-commerce company that sells popular electronics products and has since expanded to a global customer base. With this expansion, Elist has become interested in conducting a 2019-2022 analysis for uncovering insights that can further progress the organization. This project conducts a focused analysis, investigating trends in MoM & YoY sales, average order value, growth rates, refund rates, and loyalty program performance. The insights garnered will be used for reporting to the Head of Operations, informing teams - Finance, Sales, Product, Marketing - across the company on opportune areas of growth/improvement in a competitive e-commerce landscape.
 
-The ERD can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/sql/ERD.md). An Excel binary workbook can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/excel/Elist%20Analysis.xlsb).
+The ERD can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/sql/ERD.md). An Excel binary workbook can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/excel/Elist%20Analysis.xlsb). Supplemental SQL queries used for analysis can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/26637fb84fc2e7795798d75111d2d524489c4226/sql/sql-analysis.sql).
+
+## Interactive Tableau Dashboard
+An interative *Tableau Public* dashboard can be found [here](https://public.tableau.com/views/Elist/Dashboard2-horizontal?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). This dashboard focuses on Sales & Orders, enabling stakeholders to garner comparative insights on the selected year's metrics vs. its predecessor. 
+
+![elist-tableau](https://github.com/user-attachments/assets/61b37643-eed6-4497-aca5-7a9280bb24a9)
+</br></br>
 
 ## Summary of Insights
 <details>
