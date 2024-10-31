@@ -8,7 +8,7 @@ The ERD can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob
 ## Interactive Tableau Dashboard
 An interative *Tableau Public* dashboard can be found [here](https://public.tableau.com/views/Elist/Dashboard2-horizontal?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). This dashboard focuses on Sales & Orders, enabling stakeholders to garner comparative insights on the selected year's metrics vs. its predecessor. 
 
-![elist-tableau](https://github.com/user-attachments/assets/61b37643-eed6-4497-aca5-7a9280bb24a9)
+![elist-tableau](https://github.com/user-attachments/assets/fff884c7-2f09-4096-b4d7-2936d03d3590)
 </br></br>
 
 ## Summary of Insights
