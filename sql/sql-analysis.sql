@@ -21,7 +21,39 @@ ORDER BY 1 DESC, 2 ASC;
 --Findings: Averaging the resulting orders & sales for trends results in, per quarter, an (1) avg. 98 units sold & (2) avg. $155k in sales
 
 
--- Request 2: For products purchased in 2022 on the website or products purchase on mobile in any year, which region has the average highest time to deliver?
+-- Request 2: Of people who bought Apple products, which 5 customers bring the most value? 
+SELECT
+  customer_id
+  , AVG(usd_price) AS aov
+  , ROW_NUMBER() OVER (ORDER BY AVG(usd_price) DESC) AS customer_ranking
+FROM
+  core.orders LEFT JOIN core.customers ON orders.customer_id = customers.id
+WHERE 
+  product_name LIKE 'Apple%' OR product_name LIKE 'Macbook%' 
+GROUP BY 1
+QUALIFY customer_ranking <= 5;
+--Findings: Customers listed have the highest AOV
+
+
+-- Request 3: Within each purchase platform, what are the top two marketing channels that bring the highest value?
+
+-- Need purchase platform dichotomy
+-- Rank marketing channels based on purchase_platform split
+-- Order By AOV DESC
+SELECT
+  orders.purchase_platform
+  , customers.marketing_channel
+  , ROUND(AVG(orders.usd_price),2) AS aov
+  , DENSE_RANK() OVER (PARTITION BY purchase_platform ORDER BY AVG(orders.usd_price) DESC) AS ranking
+FROM
+  core.orders LEFT JOIN core.customers ON orders.customer_id = customers.id
+GROUP BY 1, 2
+QUALIFY ranking IN (1,2)
+ORDER BY 1;
+--Findings: For our mobile platform, the 'social media' & 'affiliate' channels return the highest AOV (86.71 & 70.63, respectively). Our web platform's highest AOV channels are 'affiliate' and 'direct', at 329.42 & 306.73, respectively.
+
+
+-- Request 4: For products purchased in 2022 on the website or products purchase on mobile in any year, which region has the average highest time to deliver?
 
 --(non-split: mobile & 2020 web combined) 
 -- Join orders, customers, order_status, and geo_lookup tables to match regions, delivery times, and purchase platforms
@@ -62,7 +94,7 @@ GROUP BY 1;
 --Findings: Overall, all regions averaged 7.4 & 7.5 days for web & mobile shipping, respectively. EMEA has highest delivery time for Mobile shipping at 7.64, with APAC trailing behind in second at 7.53. In regard 2020 Web orders, it appears that orders with no tracked region take the longest to ship at 7.52 - it may be worth clarifying if 'NULL' values indicate other specific global regions, or if it can be considered as a "catch-all" for the rest of the global market.
 
 
--- Request 3: What was the refund rate and refund count for each product overall?
+-- Request 5: What was the refund rate and refund count for each product overall?
 
 -- Join orders & order_status to match refunds with timestamps
 -- CASE statement to avg. where there is an existing refund-timestamp, for calculating rate
@@ -83,7 +115,7 @@ ORDER BY 2 DESC;
   --(2) In regard to the magnitude of refunds, 'Apple Airpods Headphones' has the highest amount at 2.6K - however, it does have a relatively smaller refund rate at 5.4%.
 
 
--- Request 4: Within each region, what is the most popular product?
+-- Request 6: Within each region, what is the most popular product?
 
 -- Join orders, customers, and geo_lookup tables to match regions and orders
 -- CTE & DENSE_RANK() to rank products by region, ORDERED BY total orders
@@ -114,7 +146,7 @@ WHERE
 --Findings: 'Apple Airpods Headphones' are unequivocally the highest-ordered product across all regions. NA having the most total sales at 18K, with EMEA following-up with 11.2K; LATAM had the lowest total sales at 1.9K. As this was discovered to have the highest amount of refunds (see query #3), it may be worth investigating probable cause for refunds.
 
 
--- Request 5: How does the time to make a purchase differ between loyalty customers vs. non-loyalty customers?
+-- Request 7: How does the time to make a purchase differ between loyalty customers vs. non-loyalty customers?
 
 -- Join customers & orders to match orders with loyalty/non-loyalty status
 -- CASE for helper column with loyalty/non-loyalty status differentiation
