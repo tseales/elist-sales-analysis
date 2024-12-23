@@ -6,7 +6,7 @@ Founded in 2018, Elist is an e-commerce company that sells popular electronics p
 The ERD can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/sql/ERD.md). An Excel binary workbook can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/excel/Elist%20Analysis.xlsb). Supplemental SQL queries used for analysis can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/26637fb84fc2e7795798d75111d2d524489c4226/sql/sql-analysis.sql).
 
 ## Interactive Tableau Dashboard
-An interative *Tableau Public* dashboard can be found [here](https://public.tableau.com/views/Elist/Dashboard2-horizontal?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). This dashboard focuses on Sales & Orders, enabling stakeholders to garner comparative insights on the selected year's metrics vs. its predecessor. 
+An interactive *Tableau Public* dashboard can be found [here](https://public.tableau.com/views/Elist/Dashboard2-horizontal?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). This dashboard focuses on Sales & Orders, enabling stakeholders to garner comparative insights on the selected year's metrics vs. its predecessor. 
 
 ![elist-tableau](https://github.com/user-attachments/assets/fff884c7-2f09-4096-b4d7-2936d03d3590)
 </br></br>
