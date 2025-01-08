@@ -3,7 +3,11 @@
 ## About Our Company & Data
 Founded in 2018, Elist is an e-commerce company that sells popular electronics products and has since expanded to a global customer base. With this expansion, Elist has become interested in conducting a 2019-2022 analysis for uncovering insights that can further progress the organization. This project conducts a focused analysis, investigating trends in MoM & YoY sales, average order value, growth rates, refund rates, and loyalty program performance. The insights garnered will be used for reporting to the Head of Operations, informing teams - Finance, Sales, Product, Marketing - across the company on opportune areas of growth/improvement in a competitive e-commerce landscape.
 
-The ERD can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/sql/ERD.md). An Excel binary workbook can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/excel/Elist%20Analysis.xlsb). Supplemental SQL queries used for analysis can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/26637fb84fc2e7795798d75111d2d524489c4226/sql/sql-analysis.sql).
+An Excel binary workbook can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/excel/Elist%20Analysis.xlsb). Supplemental SQL queries used for analysis can be found [here](https://github.com/tseales/Elist-Sales-Analysis/blob/26637fb84fc2e7795798d75111d2d524489c4226/sql/sql-analysis.sql).
+
+## [ERD](https://github.com/tseales/Elist-Sales-Analysis/blob/63f3f72027eed56ee4edcd3539571439e38cc00d/sql/ERD.md)
+![erd](https://github.com/user-attachments/assets/7058ad8d-2c50-439f-b5bf-3e5b26e39388)
+</br></br>
 
 ## Interactive Tableau Dashboard
 An interactive *Tableau Public* dashboard can be found [here](https://public.tableau.com/views/Elist/Dashboard2-horizontal?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). This dashboard focuses on Sales & Orders, enabling stakeholders to garner comparative insights on the selected year's metrics vs. its predecessor. 
@@ -52,16 +56,11 @@ Conducting an analysis on 108k+ sales records for the years 2019-2022, key insig
 ![loyalty-program2](https://github.com/user-attachments/assets/a45b67b8-8420-4376-b3f3-ff77dcdea22b)
 
 ## Recommendations
-<details>
-<summary>1. Continue the loyalty program & investigate the drop in sales & AOV.</summary></br>
-While the loyalty program metrics are outperforming non-loyalty, an understanding of contributing factors to the recent drop in total sales & AOV can provide direction on ensuring that this continues to do well. Further understanding factors correlated with loyalty customers' purchases - e.g., relative marketing channels, types of products purchased, customer's value from being in the program - can provide supplemental insight into paths available to be taken for increasing the vigor of the program. It would be worth continuing the loyalty program for atleast another year to allow for a more comprehensive understanding of its performance.
-</details>
-<details>
-<summary>2. Investigate expanding product catalog.</summary></br>
-With high-end gaming monitors, Apple headphones, and laptops comprising most of Elist's sales, expanding product offerings to align more with the charactersitics of current high-selling products will likely result in increased sales. A supplemental investigation into factors contributing to the high amount of refunds for "Apple Airpods Headphones" may provide direction on the type(s) of headphones Elist may want to consider offering. It is important to note, that while this may also increase the AOV, customer-sentiment will likely be important to take note of - ensuring that overall orders stay consistent, despite the inclusion of any additional higher-priced items. A possible way to mitigate, could be to increase customer-value in certain facets of the loyalty program *(see Recommendation 1)* - possibly increasing loyalty program sign-ups and sales. 
-</details>
-<details>
-<summary>3. Investigate higher sales in NA region.</summary></br>
-Understanding contributing sales factors in the NA region could provide direction for focused marketing efforts to ensure sales remain consistent & are improved, while allowing for an identification of factors that can be used for finding similar markets that Elist is likely to perform well in. In the same way, understanding contributing factors - like locality - that may play a role in the lower sales numbers for worse-performing regions, such as LATAM, can provide direction on areas Elist may want to avoid, or, focus on strengthening to better expand into the global market.
-</details>
-  
+1. Continue the loyalty program & investigate the drop in sales & AOV.
+    - While the loyalty program metrics are outperforming non-loyalty, an understanding of contributing factors to the recent drop in total sales & AOV can provide direction on ensuring that this continues to do well. Further understanding factors correlated with loyalty customers' purchases - e.g., relative marketing channels, types of products purchased, customer's value from being in the program - can provide supplemental insight into paths available to be taken for increasing the vigor of the program. It would be worth continuing the loyalty program for atleast another year to allow for a more comprehensive understanding of its performance.
+
+2. Investigate expanding product catalog.
+    - With high-end gaming monitors, Apple headphones, and laptops comprising most of Elist's sales, expanding product offerings to align more with the charactersitics of current high-selling products will likely result in increased sales. A supplemental investigation into factors contributing to the high amount of refunds for "Apple Airpods Headphones" may provide direction on the type(s) of headphones Elist may want to consider offering. It is important to note, that while this may also increase the AOV, customer-sentiment will likely be important to take note of - ensuring that overall orders stay consistent, despite the inclusion of any additional higher-priced items. A possible way to mitigate, could be to increase customer-value in certain facets of the loyalty program *(see Recommendation 1)* - possibly increasing loyalty program sign-ups and sales. 
+
+3. Investigate higher sales in NA region.</summary></br>
+    - Understanding contributing sales factors in the NA region could provide direction for focused marketing efforts to ensure sales remain consistent & are improved, while allowing for an identification of factors that can be used for finding similar markets that Elist is likely to perform well in. In the same way, understanding contributing factors - like locality - that may play a role in the lower sales numbers for worse-performing regions, such as LATAM, can provide direction on areas Elist may want to avoid, or, focus on strengthening to better expand into the global market.
