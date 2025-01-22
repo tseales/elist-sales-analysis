@@ -12,7 +12,7 @@ An Excel binary workbook can be found [here](https://github.com/tseales/Elist-Sa
 ## Interactive Tableau Dashboard
 An interactive *Tableau Public* dashboard can be found [here](https://public.tableau.com/views/Elist/Dashboard2-horizontal?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). This dashboard focuses on Sales & Orders, enabling stakeholders to garner comparative insights on the selected year's metrics vs. its predecessor. 
 
-![elist-tableau](https://github.com/user-attachments/assets/fff884c7-2f09-4096-b4d7-2936d03d3590)
+![elist-tableau](https://github.com/user-attachments/assets/8185b3e3-85dd-4bb6-b9ae-e6257993e568)
 </br></br>
 
 ## Summary of Insights
