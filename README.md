@@ -26,11 +26,11 @@ An interactive *Tableau Public* dashboard can be found [here](https://public.tab
 Conducting an analysis on 108k+ sales records for the years 2019-2022, key insights in the following areas were made:
 ### 1) Seasonality
 - **Elist observes a notable holiday surge during the months of November & December**.
-  - Increasing 21% & 22% on average, respectively, after consistent declines in October (average -31%). This correlates with general seasonal trends of increased consumer spending during the end-of-year Holiday season - commonly seen in North America - for things such as gift-giving and sales-purchasing.
+  - Increasing 21% & 22% on average, respectively, after consistent declines in October (average -31%). This correlates with general seasonal trends of increased consumer spending during the end-of-year Holiday season - commonly seen in North America - for things such as gift-giving and holiday sales.
 - **Sales subsequently fell (average -18%) during the January & February months**.
-  - Following the aforementioned seasonal holiday-spend trend - this can be indicative of consumer spending decreasing after the observable surge during the latter months of the year. Interestingly, there is a notable spike in sales during 2020.
+  - Following the aforementioned seasonal spending trend - this reduction can be indicative of consumer spending decreasing after frequent high-spending during the latter months of the year. Notably, there is a spike in sales during 2020, due to the inception of Covid and increased consumer spending to account for the shift to remote work:
 
-![combined-monthly-trends](https://github.com/user-attachments/assets/00216ca1-b10a-43a0-8fbb-a2f263361cac)
+![new-MoM-trends](https://github.com/user-attachments/assets/9abd1900-8804-4d46-98aa-ed11983c05f0)
 </br></br>
 
 ### 2) Product & Regional Segmentation
@@ -56,11 +56,11 @@ Conducting an analysis on 108k+ sales records for the years 2019-2022, key insig
 ![loyalty-program2](https://github.com/user-attachments/assets/a45b67b8-8420-4376-b3f3-ff77dcdea22b)
 
 ## Recommendations
-1. Continue the loyalty program & investigate the drop in sales & AOV.
+1. **Continue the loyalty program & investigate the drop in sales & AOV.**
     - While the loyalty program metrics are outperforming non-loyalty, an understanding of contributing factors to the recent drop in total sales & AOV can provide direction on ensuring that this continues to do well. Further understanding factors correlated with loyalty customers' purchases - e.g., relative marketing channels, types of products purchased, customer's value from being in the program - can provide supplemental insight into paths available to be taken for increasing the vigor of the program. It would be worth continuing the loyalty program for atleast another year to allow for a more comprehensive understanding of its performance.
 
-2. Investigate expanding product catalog.
+2. **Investigate expanding product catalog.**
     - With high-end gaming monitors, Apple headphones, and laptops comprising most of Elist's sales, expanding product offerings to align more with the charactersitics of current high-selling products will likely result in increased sales. A supplemental investigation into factors contributing to the high amount of refunds for "Apple Airpods Headphones" may provide direction on the type(s) of headphones Elist may want to consider offering. It is important to note, that while this may also increase the AOV, customer-sentiment will likely be important to take note of - ensuring that overall orders stay consistent, despite the inclusion of any additional higher-priced items. A possible way to mitigate, could be to increase customer-value in certain facets of the loyalty program *(see Recommendation 1)* - possibly increasing loyalty program sign-ups and sales. 
 
-3. Investigate higher sales in NA region.</summary></br>
+3. **Investigate higher sales in NA region.**
     - Understanding contributing sales factors in the NA region could provide direction for focused marketing efforts to ensure sales remain consistent & are improved, while allowing for an identification of factors that can be used for finding similar markets that Elist is likely to perform well in. In the same way, understanding contributing factors - like locality - that may play a role in the lower sales numbers for worse-performing regions, such as LATAM, can provide direction on areas Elist may want to avoid, or, focus on strengthening to better expand into the global market.
